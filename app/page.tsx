@@ -674,17 +674,17 @@ export default function HTMLAttributeStripper() {
 
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Input Section */}
-          <Card>
+          <Card className="flex flex-col">
             <CardHeader>
               <CardTitle>Input HTML</CardTitle>
               <CardDescription>Paste your HTML content here to intelligently strip unwanted attributes</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 flex flex-col flex-grow">
               <Textarea
                 placeholder="<div class='example' style='color: red;' data-id='123'>Content</div>"
                 value={inputHtml}
                 onChange={(e) => setInputHtml(e.target.value)}
-                className="min-h-[300px] font-mono text-sm"
+                className="font-mono text-sm flex-grow"
               />
               <Button onClick={() => stripAttributes(inputHtml)} className="w-full" disabled={!inputHtml.trim()}>
                 <Settings className="w-4 h-4 mr-2" />
